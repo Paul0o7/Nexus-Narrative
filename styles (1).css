@@ -1,0 +1,335 @@
+/* style.css (Persistent Reset Button Styling) */
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    background-color: #121218;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+#app-container {
+    background: linear-gradient(140deg, #282830 0%, #1a1a20 100%);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    text-align: left;
+    max-width: 900px;
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 20px;
+    border-radius: 10px;
+    align-items: start;
+}
+
+header {
+    position: relative; /* To allow absolute positioning of the reset button */
+    border-bottom: 2px solid #383840;
+    padding-bottom: 15px;
+}
+
+header h1 {
+    font-size: 3.5em;
+    color: #64b5f6;
+    margin-bottom: 5px;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+}
+
+header p.tagline {
+    color: #8ac4ff;
+    font-size: 1.3em;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.reset-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 8px 15px;
+    background: linear-gradient(to bottom, #505058 0%, #404048 100%);
+    color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background 0.2s ease-in-out;
+}
+
+.reset-button:hover {
+    background: linear-gradient(to bottom, #5a5a62 0%, #4a4a52 100%);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#video-player-section {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 700px;
+}
+
+#video-player-container {
+    position: relative;
+    width: 100%;
+}
+
+#choice-buttons-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px 0;
+    max-width: calc(2 * 180px + 20px);
+    margin: 0 auto;
+}
+
+#choice-buttons-container:has(.choice-button:nth-child(1):only-child),
+#choice-buttons-container:has(.choice-button:nth-child(1) + .choice-button:nth-child(2):only-child) {
+    justify-content: center;
+    max-width: none;
+}
+
+#choice-buttons-container:has(.choice-button:nth-child(1) + .choice-button:nth-child(2) + .choice-button) {
+    justify-content: flex-start;
+    max-width: 100%;
+}
+
+.choice-button {
+    padding: 15px 30px;
+    background: linear-gradient(to bottom, #383840 0%, #2a2a30 100%);
+    color: #e0e0e0;
+    border: none;
+    border-left: 5px solid #569cd6;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out, transform 0.1s ease, box-shadow 0.2s ease-in-out, border-left-color 0.2s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    min-width: 150px;
+    flex-grow: 1;
+}
+
+.choice-button:hover {
+    background: linear-gradient(to bottom, #42424a 0%, #303036 100%);
+    color: #8ac4ff;
+    transform: scale(1.03);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.4);
+    border-left-color: #8ac4ff;
+}
+
+.choice-button:active {
+    transform: scale(0.98);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    border-left-color: #428bca;
+}
+
+footer {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start; /* Keep buttons aligned */
+    padding-top: 20px;
+    border-top: 2px solid #383840;
+    flex-direction: column; /* Stack buttons and copyright info */
+    align-items: flex-start; /* Align items to the left */
+}
+
+footer button {
+    padding: 10px 20px;
+    background: linear-gradient(to bottom, #383840 0%, #2a2a30 100%);
+    color: #e0e0e0;
+    border: none;
+    border-left: 5px solid #569cd6;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out, border-left-color 0.2s ease-in-out;
+    margin-bottom: 10px; /* Add margin below buttons */
+}
+
+footer button:last-child {
+    margin-bottom: 20px; /* Add more margin below the last button */
+}
+
+footer p.copyright,
+footer p.video-copyright {
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 0; /* Remove default top margin */
+    margin-bottom: 5px; /* Add a little bottom margin */
+    padding-top: 10px; /* Add some space above the copyright text */
+    border-top: 1px solid #383840; /* Subtle divider line */
+}
+
+footer p.copyright {
+    padding-top: 15px; /* Add a bit more space to the first copyright line */
+}
+
+.hidden {
+    display: none !important;
+}
+
+#ending-message {
+    margin-top: 30px;
+    padding: 30px;
+    background: linear-gradient(140deg, #282830 0%, #1a1a20 100%);
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+}
+
+#ending-message h2 {
+    color: #64b5f6;
+    margin-bottom: 15px;
+    font-size: 2.5em;
+}
+
+#ending-message p {
+    color: #8ac4ff;
+    font-size: 1.2em;
+    line-height: 1.8;
+}
+
+.text-box {
+    background-color: rgba(30, 30, 36, 0.9); /* Semi-transparent dark background */
+    color: #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    position: relative; /* For positioning the close button */
+    text-align: left;
+    line-height: 1.6;
+}
+
+.text-box h3 {
+    margin-top: 0;
+    color: #64b5f6;
+}
+
+.text-box p {
+    margin-bottom: 0;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    color: #e0e0e0;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.close-button:hover {
+    opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    #app-container {
+        padding: 20px;
+        border-radius: 0;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 2.8em;
+    }
+
+    header p.tagline {
+        font-size: 1.1em;
+    }
+
+    .reset-button {
+        top: 8px;
+        right: 8px;
+        padding: 6px 10px;
+        font-size: 0.8em;
+    }
+
+    main {
+        gap: 15px;
+    }
+
+    #video-player-section {
+        max-width: 100%;
+    }
+
+    #choice-buttons-container {
+        justify-content: center;
+        max-width: none;
+    }
+
+    .choice-button {
+        font-size: 1em;
+        padding: 12px 20px;
+        border-left-width: 3px;
+        min-width: auto;
+        flex-grow: 1;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    footer button {
+        font-size: 1em;
+        padding: 10px 15px;
+        border-left-width: 3px;
+        margin-bottom: 8px;
+    }
+
+    footer button:last-child {
+        margin-bottom: 15px;
+    }
+
+    footer p.copyright,
+    footer p.video-copyright {
+        font-size: 0.7em;
+        margin-top: 0;
+        margin-bottom: 3px;
+        padding-top: 8px;
+        border-top: 1px solid #383840;
+    }
+
+    .text-box {
+        padding: 15px;
+        margin-top: 15px;
+        font-size: 0.9em;
+    }
+
+    .close-button {
+        top: 8px;
+        right: 8px;
+        font-size: 1em;
+    }
+
+    #ending-message h2 {
+        font-size: 2em;
+    }
+
+    #ending-message p {
+        font-size: 1.1em;
+    }
+}
